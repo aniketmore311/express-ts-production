@@ -1,6 +1,6 @@
-# express-js-production
+# express-ts-production
 
-## Production ready express-js starter
+## Production ready express-ts starter
 
 ## Requirements
 
@@ -23,6 +23,7 @@
 - run `cd <your project name>`
 - run `npm install`
 - run `cp .env.example .env` and fill values of env variables in `.env` file
-- run `npm start` to start in production or
+- run `npm run build` to compile typescript to javascript
+- run `npm start` to start a single process or
+- run `npm run prod` to run in pm2
 - run `npm run dev` to run in development or
-- run `npm run node` to start a single node process
