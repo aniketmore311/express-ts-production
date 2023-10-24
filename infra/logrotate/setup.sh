@@ -1,3 +1,2 @@
-APP_NAME=your-app-name
-mkdir -p /etc/logrotate.d/$APP_NAME
-cp ./logrotate-config /etc/logrotate.d/$APP_NAME/
+mkdir -p /etc/logrotate.d/you-app-name
+cp ./logrotate-config /etc/logrotate.d/your-app-name

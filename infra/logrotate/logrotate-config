@@ -1,5 +1,4 @@
-# replace your-app-name with the name of your app
-/var/log/your-app-name {
+/var/log/your-app-name/*.log {
        su root
        daily
        rotate 7

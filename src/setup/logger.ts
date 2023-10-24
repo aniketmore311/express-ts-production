@@ -32,14 +32,14 @@ if (config.NODE_ENV === 'production') {
                     target: "pino/file",
                     level: "info",
                     options: {
-                        destination: path.join(config.LOG_DIR, "info.log.ndjson")
+                        destination: path.join(config.LOG_DIR, "info.ndjson.log")
                     }
                 },
                 {
                     target: "pino/file",
                     level: "error",
                     options: {
-                        destination: path.join(config.LOG_DIR, "error.log.ndjson")
+                        destination: path.join(config.LOG_DIR, "error.ndjson.log")
                     }
                 }
             ]

@@ -7,6 +7,6 @@ services:
     image: node-server
     container_name: node-server
     environment:
-      NODE_ENV: "development"
+      NODE_ENV: "production"
     ports:
       - "8080:8080"
