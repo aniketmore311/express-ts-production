@@ -1,0 +1,44 @@
+openapi: "3.0.2"
+info:
+  title: Express TS Production
+  description: Production ready express setup
+  version: "0.1.0"
+servers:
+  - url: http://localhost:8080
+paths:
+  /:
+    get:
+      tags:
+        - "healthcheck"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthCheckResponse"
+  /healthcheck:
+    get:
+      tags:
+        - "healthcheck"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthCheckResponse"
+components:
+  schemas:
+    HealthCheckResponse:
+      type: object
+      properties:
+        status:
+          type: string
+    ErrorResponse:
+      type: object
+      properties:
+        statusCode:
+          type: number
+        message:
+          type: string

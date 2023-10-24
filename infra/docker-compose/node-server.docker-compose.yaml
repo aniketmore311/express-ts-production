@@ -1,0 +1,12 @@
+version: '3'
+services:
+  node-server:
+    build:
+      context: ../../
+      dockerfile: ./infra/node-server/Dockerfile
+    image: node-server
+    container_name: node-server
+    environment:
+      NODE_ENV: "development"
+    ports:
+      - "8080:8080"

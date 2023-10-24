@@ -1,0 +1,11 @@
+# replace your-app-name with the name of your app
+/var/log/your-app-name {
+       su root
+       daily
+       rotate 7
+       delaycompress
+       compress
+       notifempty
+       missingok
+       copytruncate
+}
