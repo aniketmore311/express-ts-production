@@ -30,15 +30,14 @@
 
 ## how to deploy this starter
 
-- put your domain name in the Caddyfile in `infrastructure/caddy/Caddyfile` instead of `api.example.com` and make sure that the port mentioned in the Caddy file ( default `8080`) is the port at which you want to run your api
-- make sure your `DNS` is setup so that your domain points to your server. This can be done by adding an `A` or a `CNAME` record in your DNS which points to your server's IP address or domain name
-- get your code on the server using `git clone` or `FTP`
-- run `cp .env.example .env` and fill all the required environment variables for production in the new `.env` file or make sure they are set in the server's environment
-- make sure the `PORT` environment variable and the port mentioned in the Caddyfile are the same (default is `8080`)
-- make sure the `NODE_ENV` environment variable is set to `production`
-- run `cd infrastructure` to cd into the infrastructure directory
-- make sure `docker` and `docker-compose` is installed on your server
-- run `docker-compose up -d`. This will start the Caddy server and the api service
-- this will also create a `logs` directory in the root of the project which contains logs from the api
-- the logs can also be viewed by running `sudo docker logs api` for the api and `sudo docker logs caddy` for the caddy server
-- visit or curl `https://api.example.com` (or your domain as per the Caddyfile) to see if the setup has worked
+1. using the docker-image
+- use the dockerfile to build the docker image, this can be run anywhere, look at the .env.example file to understand which env variables are required
+
+2. on the server
+- install node.js 18.18.0 on the server
+- clone the repo on the server
+- run cp .env.example .env
+- setup log rotation by first modifying the files in infra/logrotate directory for your own application
+- run the setup script in that directory
+- run "npm run start:prod" to start the server
+- use a reverse proxy or load balancer in front of the server to do load balancing and ssl termination, some examples are nginx, haproxy, aws elastic load balancer etc
